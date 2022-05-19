@@ -23,15 +23,22 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import '@testing-library/cypress/add-commands'
+
 Cypress.Commands.add('change_viewports', (time) =>
   {
  cy.viewport('iphone-6')
  cy.wait(time)
  cy.get('.elementor-menu-toggle').first().click()
-  cy.wait(time/2)
+ cy.wait(time/2)
+
  cy.viewport('ipad-2')
  cy.wait(time)
+
  cy.viewport('macbook-16')
  cy.wait(time)
-
+ //cy.get('.menu-item:visible').contains("Vegan Leben").trigger('mouseover')
+ //cy.get('.menu-item:visible').contains("Vegan Leben").trigger('click')
+ cy.get('.menu-item:visible').first().trigger('click')
+ cy.wait(time/2)
   })
