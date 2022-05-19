@@ -1,5 +1,5 @@
 1. Yarn installieren
-https://classic.yarnpkg.com/lang/en/docs/install/#debian-stable
+https://classic.yarnpkg.com/lang/en/docs/install/
 2. Terminal öffnen
 3. In einen Ordner hineingehen, wo man Projekte abspeichert. Ich persönlich habe meistens einen Ordner namens "workspace", wo ich alle meine Projekte speichere.
 4.  Im Ordner diesen Behel ausführen:
