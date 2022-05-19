@@ -20,25 +20,6 @@ describe('basic-check', () => {
     cy.visit('https://vegan.ch/')
   })
 
-  it('check if blog-posts look normal', () => {
-
-    cy.request('https://vegan.ch/wp-json/wp/v2/posts').then(
-      (response) => {
-        var items = response.body
-        //var items = response.body.items
-
-        for (var index in items) {
-          cy.visit(items[index].link)
-          cy.change_viewports(1000)
-
-
-
-        }
-      }
-    )
-
-  })
-
   it('check if pages look normal', () => {
 
     cy.request('https://vegan.ch/wp-json/menus/v1/menus/cypress-test').then(
@@ -57,6 +38,25 @@ describe('basic-check', () => {
             }
 
           }
+
+
+        }
+      }
+    )
+
+  })
+
+  it('check if blog-posts look normal', () => {
+
+    cy.request('https://vegan.ch/wp-json/wp/v2/posts').then(
+      (response) => {
+        var items = response.body
+        //var items = response.body.items
+
+        for (var index in items) {
+          cy.visit(items[index].link)
+          cy.change_viewports(1000)
+
 
 
         }
